@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff1f4">
+<title>Happy Birthday, My Everything ❤️</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Dancing+Script:wght@600;700&display=swap');
+:root{--pink:#f6a9ba;--rose:#c94f70;--ink:#583541;--cream:#fff9f5;--soft:#ffe9ee}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif;overflow-x:hidden}
+button{font:inherit;cursor:pointer}
+.hero{min-height:100svh;display:grid;place-items:center;text-align:center;padding:34px 20px;position:relative;overflow:hidden;background:radial-gradient(circle at 20% 20%,#fff 0 8%,transparent 30%),linear-gradient(145deg,#fff5f5,#ffe4eb 55%,#fff7ef)}
+.hero:before,.hero:after{content:"";position:absolute;width:270px;height:270px;border-radius:50%;background:#ffc8d5;filter:blur(60px);opacity:.45}
+.hero:before{top:-100px;left:-90px}.hero:after{right:-100px;bottom:-100px;background:#f8c9b5}
+.hero-content{position:relative;z-index:2;max-width:720px}
+.eyebrow{letter-spacing:.22em;text-transform:uppercase;font-size:.72rem;color:#a65b70;font-weight:700}
+h1,h2{font-family:'Playfair Display',serif;font-weight:600}
+h1{font-size:clamp(3rem,10vw,6.5rem);line-height:1.02;margin:18px 0;color:#9f3e5d}
+.script{font-family:'Dancing Script',cursive;color:#c45a79;font-size:clamp(1.7rem,5vw,2.5rem);margin:10px 0 22px}
+.intro{max-width:530px;line-height:1.8;color:#795965;margin:0 auto 28px}
+.primary,.secondary{border:0;border-radius:999px;padding:15px 25px;font-weight:700;transition:.25s}
+.primary{background:#bd5271;color:white;box-shadow:0 10px 25px #bd52713a}
+.primary:hover{transform:translateY(-3px);box-shadow:0 14px 30px #bd527155}
+.secondary{background:white;color:#a84665;border:1px solid #f2c4d0}
+.scroll-note{margin-top:35px;font-size:.8rem;color:#a47783}
+.heart{position:absolute;color:#e88ba4;opacity:.6;animation:float 8s ease-in-out infinite;pointer-events:none}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-28px) rotate(10deg)}}
+section{padding:82px 20px}
+.section-inner{max-width:960px;margin:auto}
+.center{text-align:center}
+.kicker{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:#bd6680;font-weight:700}
+h2{font-size:clamp(2.1rem,6vw,3.5rem);margin:12px 0 18px;color:#85445a}
+.lead{line-height:1.85;color:#80636d;max-width:650px;margin:0 auto}
+.story{background:#fff}
+.story-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:38px}
+.memory{border:1px solid #f5dce2;border-radius:22px;padding:24px 18px;background:#fff9fa;text-align:center;min-height:190px;display:flex;flex-direction:column;justify-content:center}
+.memory .emoji{font-size:2rem;margin-bottom:12px}.memory h3{margin:0 0 8px;color:#a34b68;font-family:'Playfair Display',serif}.memory p{margin:0;color:#846b73;line-height:1.65;font-size:.92rem}
+.gift{background:linear-gradient(135deg,#fff0f3,#fff9f4)}
+.gift-card{max-width:700px;margin:35px auto 0;background:#fff;border-radius:28px;padding:clamp(25px,6vw,48px);box-shadow:0 18px 55px #9b52601a;text-align:center}
+.gift-icon{font-size:3rem}
+.gift-card p{line-height:1.9;color:#795e68}
+.letter{background:#fff}
+.envelope-wrap{margin:35px auto 0;max-width:650px;text-align:center}
+.envelope{width:min(100%,480px);min-height:250px;margin:auto;position:relative;border:0;background:transparent;display:block;padding:0;perspective:1000px}
+.envelope-back{position:absolute;inset:28px 0 0;background:#f3b7c5;border-radius:14px;box-shadow:0 15px 35px #7d3f541a}
+.envelope-front{position:absolute;inset:28px 0 0;background:linear-gradient(145deg,#f9d1da,#e99fb2);clip-path:polygon(0 0,50% 58%,100% 0,100% 100%,0 100%);border-radius:14px}
+.envelope-flap{position:absolute;inset:28px 0 auto;height:58%;background:#f7c5d0;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .8s;z-index:3}
+.seal{position:absolute;z-index:4;top:112px;left:50%;transform:translateX(-50%);width:54px;height:54px;border-radius:50%;background:#b84e6c;color:white;display:grid;place-items:center;font-size:1.4rem;box-shadow:0 5px 15px #78324733}
+.envelope.open .envelope-flap{transform:rotateX(180deg)}
+.envelope.open .seal{opacity:0;transition:.3s}
+.tap{color:#9b6878;font-size:.9rem;margin-top:12px}
+.letter-paper{display:none;text-align:left;background:#fff9f4;border:1px solid #f3dce0;border-radius:20px;padding:clamp(22px,5vw,38px);margin:25px auto 0;max-width:650px;line-height:1.9;color:#70545e;box-shadow:0 12px 35px #9b526014}
+.letter-paper.show{display:block;animation:rise .7s ease both}
+.letter-paper .dear{font-family:'Dancing Script',cursive;font-size:2rem;color:#b44f6d}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.cake-section{background:#fff2f5;text-align:center}
+.cake{font-size:6rem;filter:drop-shadow(0 8px 10px #9e566022);margin:15px 0}
+.cake-message{min-height:30px;color:#a24c68;font-weight:600;margin:16px 0}
+footer{text-align:center;padding:48px 20px 60px;background:#8e3f59;color:#fff0f3}
+footer .signature{font-family:'Dancing Script',cursive;font-size:2.1rem;margin:8px 0}
+footer p{opacity:.85;font-size:.85rem}
+.confetti{position:fixed;top:-15px;z-index:20;pointer-events:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}
+@media(max-width:650px){section{padding:65px 18px}.story-grid{grid-template-columns:1fr}.memory{min-height:145px}.hero{min-height:92svh}}
+
+.gallery{background:linear-gradient(180deg,#fff8f5,#fff0f4);position:relative;overflow:hidden}
+.photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin:42px auto 0;align-items:start;max-width:900px}
+.photo-card{margin:0;padding:12px 12px 5px;background:#fff;border:1px solid #f3dce0;border-radius:18px;box-shadow:0 16px 42px #9b52601c;transform:rotate(-1.2deg);transition:transform .45s,box-shadow .45s;animation:photoIn .8s both}
+.photo-card:nth-child(2n){transform:rotate(1.2deg);animation-delay:.12s}
+.photo-card:hover{transform:translateY(-8px) rotate(0) scale(1.015);box-shadow:0 24px 55px #9b52602a}
+.photo-card img{display:block;width:100%;height:clamp(230px,48vw,480px);object-fit:cover;object-position:center;border-radius:11px;cursor:zoom-in}
+.photo-card figcaption{font-family:'Dancing Script',cursive;font-size:clamp(1.2rem,2.8vw,1.5rem);color:#a34b68;padding:13px 5px 9px;text-align:center}
+@keyframes photoIn{from{opacity:0;transform:translateY(25px) rotate(-1deg)}to{opacity:1}}
+.photo-card:nth-child(2n){animation-name:photoInRight}
+@keyframes photoInRight{from{opacity:0;transform:translateY(25px) rotate(1deg)}to{opacity:1}}
+.photo-lightbox{position:fixed;inset:0;background:#24151ddd;z-index:100;display:none;place-items:center;padding:22px;backdrop-filter:blur(9px)}
+.photo-lightbox.open{display:grid;animation:rise .25s ease}
+.photo-lightbox img{max-width:min(92vw,900px);max-height:84svh;object-fit:contain;border:10px solid #fff;border-radius:8px;box-shadow:0 20px 70px #0008}
+.photo-lightbox button{position:absolute;top:18px;right:22px;border:0;border-radius:50%;width:46px;height:46px;background:#fff;color:#8e3f59;font-size:1.6rem}
+@media(max-width:650px){.photo-grid{grid-template-columns:1fr;max-width:470px;gap:22px}.photo-card img{height:auto;max-height:620px}}
+
+
+.memory,.gift-card,.envelope-wrap{transition:transform .5s,box-shadow .5s}
+.memory:hover{transform:translateY(-7px);box-shadow:0 16px 35px #9b526018}
+.revealed{animation:rise .75s ease both}
+button:focus-visible{outline:3px solid #d77f99;outline-offset:4px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+/* Floating birthday soundtrack player */
+.music-player{position:fixed;right:16px;bottom:16px;z-index:90;display:flex;align-items:center;gap:10px;padding:10px 14px 10px 10px;border:1px solid #f0c5d0;border-radius:999px;background:rgba(255,250,248,.94);box-shadow:0 10px 35px #6f344522;backdrop-filter:blur(12px);color:#874258}
+.music-toggle{width:44px;height:44px;border:0;border-radius:50%;background:linear-gradient(145deg,#c65b7a,#923d5a);color:#fff;font-size:1.1rem;display:grid;place-items:center;box-shadow:0 5px 14px #9b526044}
+.music-copy{display:flex;flex-direction:column;gap:2px;min-width:105px}
+.music-copy strong{font-size:.78rem;color:#85445a}
+.music-copy span{font-size:.68rem;color:#a47783}
+.music-player.playing .music-toggle{animation:musicPulse 1.7s ease-in-out infinite}
+@keyframes musicPulse{50%{box-shadow:0 0 0 8px #c65b7a20,0 5px 14px #9b526044}}
+.music-hint{font-size:.8rem;color:#986879;margin-top:14px}
+@media(max-width:420px){.music-player{right:10px;bottom:10px;gap:8px;padding-right:11px}.music-copy{min-width:88px}.music-copy strong{font-size:.72rem}}
+
+</style>
+</head>
+<body>
+
+<div class="music-player" id="musicPlayer">
+  <button class="music-toggle" id="musicToggle" type="button" aria-label="Play birthday song" title="Play birthday song">▶</button>
+  <div class="music-copy"><strong>A song for you ❤️</strong><span id="musicStatus">Tap to play</span></div>
+  <audio id="birthdaySong" preload="metadata" loop>
+    <source src="music/Alfaaz-Zain-SnapYT.App.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<header class="hero" id="top">
+  <span class="heart" style="top:15%;left:12%;font-size:30px">♡</span>
+  <span class="heart" style="top:24%;right:12%;font-size:42px;animation-delay:1s">♥</span>
+  <span class="heart" style="bottom:17%;left:18%;font-size:24px;animation-delay:2s">✧</span>
+  <span class="heart" style="bottom:22%;right:17%;font-size:32px;animation-delay:3s">♡</span>
+  <div class="hero-content">
+    <div class="eyebrow">A little world made just for you</div>
+    <h1>Happy Birthday</h1>
+    <div class="script">My Everything ❤️</div>
+    <p class="intro">Today is all about celebrating the beautiful person you are. I wish I could be right beside you, but until then, here's a little piece of my heart, made just for you.</p>
+    <button class="primary" onclick="document.getElementById('story').scrollIntoView({behavior:'smooth'})">Open your surprise ✨</button>
+    <div class="scroll-note">Made with love, just for you · 4 November</div>
+  </div>
+</header>
+
+<section class="story" id="story">
+  <div class="section-inner center">
+    <div class="kicker">A few little reminders</div>
+    <h2>Things I hope you never forget</h2>
+    <p class="lead">You make ordinary days feel special. So today, I wanted to remind you of a few things your heart deserves to hear.</p>
+    <div class="story-grid">
+      <article class="memory"><div class="emoji">🌷</div><h3>You are precious</h3><p>Never doubt how much happiness your presence brings into my life.</p></article>
+      <article class="memory"><div class="emoji">🌙</div><h3>You are in my duas</h3><p>May Allah bless your life with peace, happiness, good health and endless reasons to smile.</p></article>
+      <article class="memory"><div class="emoji">💌</div><h3>You are loved</h3><p>Even when distance keeps us apart, you are never far from my thoughts.</p></article>
+    </div>
+  </div>
+</section>
+
+
+<section class="gallery" id="memories">
+  <div class="section-inner center">
+    <div class="kicker">Little moments, big feelings</div>
+    <h2>My favourite kind of memories 📸</h2>
+    <p class="lead">A few moments I wish I could pause forever. Every picture holds a little piece of happiness.</p>
+    <div class="photo-grid">
+      <figure class="photo-card">
+        <img src="images/our-moment.png" alt="A special couple moment together" loading="lazy">
+        <figcaption>In my favourite place — close to you. ❤️</figcaption>
+      </figure>
+      <figure class="photo-card wide">
+        <img src="images/little-memories.png" alt="A collection of sweet couple photo memories" loading="lazy">
+        <figcaption>Little snapshots, endless love. ✨</figcaption>
+      </figure>
+      <figure class="photo-card">
+        <img src="images/polaroid-love.png" alt="A warm instant-film memory of us" loading="lazy">
+        <figcaption>If I could keep one moment, it would be this. 🤎</figcaption>
+      </figure>
+      <figure class="photo-card wide">
+        <img src="images/close-to-you.png" alt="A close and happy couple portrait" loading="lazy">
+        <figcaption>Anywhere feels like home with you. 🫶</figcaption>
+      </figure>
+      <figure class="photo-card">
+        <img src="images/growing-together.png" alt="A birthday memory across the years" loading="lazy">
+        <figcaption>Every version of you is my favourite. 🌷</figcaption>
+      </figure>
+      <figure class="photo-card wide">
+        <img src="images/little-moments.png" alt="A tender memory together" loading="lazy">
+        <figcaption>More memories, more reasons to smile. 💗</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="gift">
+  <div class="section-inner center">
+    <div class="kicker">A little birthday wish</div>
+    <h2>If I could wish one thing for you…</h2>
+    <div class="gift-card">
+      <div class="gift-icon">🎀</div>
+      <p>I would wish for you to see yourself the way I see you: someone wonderfully unique, deserving of every good thing this world has to offer. I hope this new year of your life brings you closer to every dream you've quietly kept in your heart.</p>
+      <p><strong>Keep smiling, birthday girl. The world is softer with your smile in it. ❤️</strong></p>
+    </div>
+  </div>
+</section>
+
+<section class="letter">
+  <div class="section-inner center">
+    <div class="kicker">Something from my heart</div>
+    <h2>A little letter for you</h2>
+    <p class="lead">There's one more thing I wanted you to open. Tap the envelope, birthday girl. 💗</p>
+    <div class="envelope-wrap">
+      <button class="envelope" id="envelope" aria-label="Open your birthday letter" onclick="openLetter()">
+        <div class="envelope-back"></div><div class="envelope-flap"></div><div class="envelope-front"></div><div class="seal">♥</div>
+      </button>
+      <div class="tap" id="tapText">Tap to open your letter</div>
+      <div class="letter-paper" id="letterPaper">
+        <div class="dear">My dearest Zuhal, ❤️</div>
+        <p>Happy birthday, my everything. I wish I could be there to see your smile, wish you in person and make this day feel as special as you are. Since I can't do that right now, I made this little page to send you a piece of my love.</p>
+        <p>Thank you for being you. I hope you never stop believing in yourself, never stop chasing your dreams and never forget how deserving you are of happiness. May Allah protect you, guide you, ease every difficulty and fill your life with barakah, beautiful moments and countless reasons to smile. Ameen.</p>
+        <p>Distance may keep me from being beside you today, but it cannot stop me from wishing you the happiest birthday. I hope you enjoy every little surprise and feel loved today.</p>
+        <p><strong>Happy birthday once again, my love. Here's to your beautiful heart and all the wonderful things waiting for you. ❤️</strong></p>
+        <div class="dear" style="text-align:right">Always yours,</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cake-section">
+  <div class="section-inner">
+    <div class="kicker">Make a birthday wish</div>
+    <h2>One last little surprise 🎂</h2>
+    <div class="cake" id="cake">🎂</div>
+    <p class="lead">Close your eyes, make a wish and tap the button to celebrate!</p>
+    <div class="cake-message" id="cakeMessage">Your birthday wish is waiting…</div>
+    <button class="primary" onclick="celebrate()">Celebrate! 🎉</button>
+  </div>
+</section>
+
+<footer>
+  <div>Made with all my love</div>
+  <div class="signature">For my everything ❤️</div>
+  <p>Happy 4th November, Zuhal. May this year be beautiful to you.</p>
+</footer>
+
+<div class="photo-lightbox" id="photoLightbox" role="dialog" aria-label="Photo preview" onclick="closePhoto(event)">
+  <button type="button" aria-label="Close photo" onclick="closePhoto(event)">×</button>
+  <img id="lightboxImage" src="" alt="Expanded memory">
+</div>
+<script>
+
+const birthdaySong=document.getElementById('birthdaySong');
+const musicToggle=document.getElementById('musicToggle');
+const musicPlayer=document.getElementById('musicPlayer');
+const musicStatus=document.getElementById('musicStatus');
+musicToggle.addEventListener('click',async()=>{
+  if(birthdaySong.paused){
+    try{
+      await birthdaySong.play();
+      musicToggle.textContent='Ⅱ';
+      musicToggle.setAttribute('aria-label','Pause birthday song');
+      musicPlayer.classList.add('playing');
+      musicStatus.textContent='Now playing · Alfaaz';
+    }catch(error){
+      musicStatus.textContent='Tap again to play';
+    }
+  }else{
+    birthdaySong.pause();
+    musicToggle.textContent='▶';
+    musicToggle.setAttribute('aria-label','Play birthday song');
+    musicPlayer.classList.remove('playing');
+    musicStatus.textContent='Paused';
+  }
+});
+birthdaySong.addEventListener('ended',()=>{
+  musicToggle.textContent='▶';
+  musicPlayer.classList.remove('playing');
+  musicStatus.textContent='Tap to play';
+});
+
+function closePhoto(event){
+  if(event.target.id==='photoLightbox'||event.target.tagName==='BUTTON'){
+    document.getElementById('photoLightbox').classList.remove('open');
+    document.body.style.overflow='';
+  }
+}
+document.querySelectorAll('.photo-card img').forEach(img=>{
+  img.addEventListener('click',()=>{
+    document.getElementById('lightboxImage').src=img.src;
+    document.getElementById('photoLightbox').classList.add('open');
+    document.body.style.overflow='hidden';
+  });
+});
+function openLetter(){
+  const env=document.getElementById('envelope');
+  const paper=document.getElementById('letterPaper');
+  env.classList.add('open');
+  paper.classList.add('show');
+  document.getElementById('tapText').textContent='A little piece of my heart, just for you ❤️';
+  setTimeout(()=>paper.scrollIntoView({behavior:'smooth',block:'center'}),350);
+}
+// Gentle reveal as each section enters the screen
+if('IntersectionObserver' in window){
+  const revealObserver=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('revealed');revealObserver.unobserve(entry.target)}});
+  },{threshold:.12});
+  document.querySelectorAll('.memory,.gift-card,.envelope-wrap,.photo-card').forEach(el=>revealObserver.observe(el));
+}
+function celebrate(){
+  document.getElementById('cake').textContent='🧁';
+  document.getElementById('cakeMessage').textContent='May all your beautiful wishes come true, Zuhal! ❤️';
+  const symbols=['💗','✨','🌸','💕','🎀','♥'];
+  for(let i=0;i<65;i++){
+    const el=document.createElement('span');
+    el.className='confetti';
+    el.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+    el.style.left=Math.random()*100+'vw';
+    el.style.animationDuration=(2.5+Math.random()*3)+'s';
+    el.style.fontSize=(14+Math.random()*18)+'px';
+    document.body.appendChild(el);
+    setTimeout(()=>el.remove(),6000);
+  }
+}
+</script>
+</body>
+</html>
